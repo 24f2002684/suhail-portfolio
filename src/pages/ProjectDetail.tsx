@@ -27,6 +27,9 @@ export default function ProjectDetail() {
       </Link>
 
       <section className="detail-hero">
+        {project.images?.[0] && (
+          <img className="detail-image" src={project.images[0]} alt={`${project.title} preview`} />
+        )}
         <p className="kicker">
           {categoryLabels[project.category]} / {project.status === "in-progress" ? "In progress" : "Completed"}
         </p>

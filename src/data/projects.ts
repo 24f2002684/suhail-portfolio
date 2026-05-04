@@ -29,6 +29,25 @@ export const categoryLabels: Record<ProjectCategory, string> = {
 
 export const projects: Project[] = [
   {
+    title: "Sample Project With Image",
+    slug: "sample-project",
+    summary:
+      "A dummy project entry that shows how images, links, technologies, category, and featured status work.",
+    description:
+      "This sample project is here only as a learning template. Replace the title, summary, description, image path, tech stack, and links with your real project details when you add your own work.",
+    tech: ["React", "Vite", "Portfolio", "Sample Data"],
+    category: "web",
+    status: "completed",
+    featured: false,
+    year: "2026",
+    links: {
+      github: "https://github.com/24f2002684/suhail-portfolio",
+      demo: "https://suhail-portfolio-alpha.vercel.app",
+      post: "https://www.linkedin.com/in/suhailaktharsm",
+    },
+    images: ["/projects/sample-project/me.jpg"],
+  },
+  {
     title: "RoadSense",
     slug: "roadsense",
     summary: "Smart road safety and monitoring platform for detecting and mapping road hazards.",
@@ -117,6 +136,7 @@ export const projects: Project[] = [
     status: "completed",
     featured: false,
   },
+
   {
     title: "Automatic Hand Sanitizer",
     slug: "automatic-hand-sanitizer",

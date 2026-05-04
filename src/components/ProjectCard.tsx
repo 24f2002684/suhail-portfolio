@@ -14,8 +14,12 @@ export default function ProjectCard({ project }: ProjectCardProps) {
       whileHover={{ y: -6 }}
       transition={{ type: "spring", stiffness: 280, damping: 22 }}
     >
-      <div className="project-visual" aria-hidden="true">
-        <Cpu size={30} />
+      <div className="project-visual">
+        {project.images?.[0] ? (
+          <img src={project.images[0]} alt={`${project.title} preview`} />
+        ) : (
+          <Cpu size={30} aria-hidden="true" />
+        )}
       </div>
       <div className="flex items-start justify-between gap-4">
         <div>
