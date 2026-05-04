@@ -29,6 +29,16 @@ export const achievements: Achievement[] = [
     image: "/achievements/sample-achievement/me.jpg",
     link: "https://www.linkedin.com/in/suhailaktharsm",
   },
+    {
+    title: "Sample Achievement With Image 2",
+    description:
+      "This is a dummy achievement entry 2. Replace the title, description, image path, and link with your real certificate, event photo, LinkedIn post, or proof later.",
+    type: "recognition",
+    featured: false,
+    year: "2026",
+    image: "/achievements/sample-achievement/suhail.jpeg",
+    link: "https://www.linkedin.com/in/suhailaktharsm",
+  },
   {
     title: "Finalist - Sprint4Good AI Hackathon",
     description: "Reached the finalist stage at an AI hackathon hosted by IIT Delhi.",
