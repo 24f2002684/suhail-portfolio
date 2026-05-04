@@ -45,7 +45,11 @@ export const projects: Project[] = [
       demo: "https://suhail-portfolio-alpha.vercel.app",
       post: "https://www.linkedin.com/in/suhailaktharsm",
     },
-    images: ["/projects/sample-project/me.jpg"],
+    images: [
+      "/projects/sample-project/me.jpg",
+      "/projects/sample-project/me-2.jpg",
+      "/projects/sample-project/me-3.jpg",
+    ],
   },
   {
     title: "RoadSense",

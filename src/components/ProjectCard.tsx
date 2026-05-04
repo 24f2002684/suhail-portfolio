@@ -1,6 +1,7 @@
-import { ArrowUpRight, Cpu, Github, Globe2 } from "lucide-react";
+import { ArrowUpRight, Github, Globe2 } from "lucide-react";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
+import ImageCarousel from "./ImageCarousel";
 import { categoryLabels, type Project } from "../data/projects";
 
 type ProjectCardProps = {
@@ -14,13 +15,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
       whileHover={{ y: -6 }}
       transition={{ type: "spring", stiffness: 280, damping: 22 }}
     >
-      <div className="project-visual">
-        {project.images?.[0] ? (
-          <img src={project.images[0]} alt={`${project.title} preview`} />
-        ) : (
-          <Cpu size={30} aria-hidden="true" />
-        )}
-      </div>
+      <ImageCarousel images={project.images} alt={`${project.title} preview`} compact />
       <div className="flex items-start justify-between gap-4">
         <div>
           <p className="card-meta">

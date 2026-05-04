@@ -34,15 +34,41 @@ Project fields:
     github: "https://github.com/...",
     demo: "https://..."
   },
-  images: ["/projects/project-name/screenshot.png"]
+  images: [
+    "/projects/project-name/screenshot.png",
+    "/projects/project-name/photo-2.jpg",
+    "/projects/project-name/photo-3.jpg"
+  ]
 }
 ```
 
+If you add more than one image, the project card and detail page automatically become a smooth auto-changing carousel.
+
 ## Add A New Achievement
 
-1. Open `src/data/achievements.ts`.
-2. Add a new achievement object.
-3. Set `featured: true` only if it should appear on the homepage.
+1. Add certificate/event images in `public/achievements/achievement-name/`.
+2. Open `src/data/achievements.ts`.
+3. Add a new achievement object.
+4. Set `featured: true` only if it should appear on the homepage.
+
+Example:
+
+```ts
+{
+  title: "Won XYZ Hackathon",
+  description: "Built a useful product and reached the final round.",
+  type: "hackathon",
+  featured: false,
+  year: "2026",
+  images: [
+    "/achievements/xyz-hackathon/certificate.jpg",
+    "/achievements/xyz-hackathon/team-photo.jpg"
+  ],
+  link: "https://linkedin.com/your-proof-post"
+}
+```
+
+Achievement cards also show a carousel when multiple images are added. If no image is added yet, the card keeps a visual placeholder.
 
 ## Deploy Free On Vercel
 

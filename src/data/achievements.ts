@@ -7,6 +7,7 @@ export type Achievement = {
   featured: boolean;
   year?: string;
   image?: string;
+  images?: string[];
   link?: string;
 };
 
@@ -26,7 +27,11 @@ export const achievements: Achievement[] = [
     type: "recognition",
     featured: false,
     year: "2026",
-    image: "/achievements/sample-achievement/me.jpg",
+    images: [
+      "/achievements/sample-achievement/me.jpg",
+      "/achievements/sample-achievement/me-2.jpg",
+      "/achievements/sample-achievement/me-3.jpg",
+    ],
     link: "https://www.linkedin.com/in/suhailaktharsm",
   },
     {

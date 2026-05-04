@@ -1,6 +1,7 @@
 import { ArrowLeft, Github, Globe2 } from "lucide-react";
 import { Link, useParams } from "react-router-dom";
 import AnimatedPage from "../components/AnimatedPage";
+import ImageCarousel from "../components/ImageCarousel";
 import { categoryLabels, projects } from "../data/projects";
 
 export default function ProjectDetail() {
@@ -27,9 +28,7 @@ export default function ProjectDetail() {
       </Link>
 
       <section className="detail-hero">
-        {project.images?.[0] && (
-          <img className="detail-image" src={project.images[0]} alt={`${project.title} preview`} />
-        )}
+        <ImageCarousel images={project.images} alt={`${project.title} gallery`} className="detail-carousel" />
         <p className="kicker">
           {categoryLabels[project.category]} / {project.status === "in-progress" ? "In progress" : "Completed"}
         </p>

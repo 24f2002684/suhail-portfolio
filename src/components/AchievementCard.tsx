@@ -1,5 +1,6 @@
 import { Award, ExternalLink, Sparkles } from "lucide-react";
 import { motion } from "framer-motion";
+import ImageCarousel from "./ImageCarousel";
 import { achievementLabels, type Achievement } from "../data/achievements";
 
 type AchievementCardProps = {
@@ -7,17 +8,17 @@ type AchievementCardProps = {
 };
 
 export default function AchievementCard({ achievement }: AchievementCardProps) {
+  const images = achievement.images ?? (achievement.image ? [achievement.image] : []);
+
   return (
     <motion.article
-      className={achievement.image ? "achievement-card achievement-card-with-image" : "achievement-card"}
+      className="achievement-card achievement-card-with-image"
       initial={{ opacity: 0, y: 14 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-60px" }}
       transition={{ duration: 0.35 }}
     >
-      {achievement.image && (
-        <img className="achievement-image" src={achievement.image} alt={`${achievement.title} visual`} />
-      )}
+      <ImageCarousel images={images} alt={`${achievement.title} visual`} compact />
       <div className="achievement-icon">
         {achievement.featured ? <Sparkles size={20} /> : <Award size={20} />}
       </div>

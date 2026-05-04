@@ -1,6 +1,6 @@
 import type { ReactNode } from "react";
-import { Github, Linkedin, Mail, Menu, X } from "lucide-react";
-import { useState } from "react";
+import { Github, Linkedin, Mail, Menu, Moon, Sun, X } from "lucide-react";
+import { useEffect, useState } from "react";
 import { NavLink } from "react-router-dom";
 import { profile } from "../data/profile";
 import { cn } from "../utils";
@@ -17,9 +17,18 @@ type LayoutProps = {
 
 export default function Layout({ children }: LayoutProps) {
   const [open, setOpen] = useState(false);
+  const [theme, setTheme] = useState<"dark" | "light">(() => {
+    if (typeof window === "undefined") return "dark";
+    return window.localStorage.getItem("theme") === "light" ? "light" : "dark";
+  });
+
+  useEffect(() => {
+    document.documentElement.dataset.theme = theme;
+    window.localStorage.setItem("theme", theme);
+  }, [theme]);
 
   return (
-    <div className="min-h-screen bg-ink text-slate-100">
+    <div className="app-shell min-h-screen bg-ink text-slate-100">
       <div className="site-noise" />
       <header className="sticky top-0 z-50 border-b border-white/10 bg-ink/82 backdrop-blur-xl">
         <nav className="mx-auto flex max-w-7xl items-center justify-between px-4 py-3 sm:px-6 lg:px-8">
@@ -54,6 +63,14 @@ export default function Layout({ children }: LayoutProps) {
             <a className="icon-link" href={profile.socials.linkedin} aria-label="LinkedIn" target="_blank" rel="noreferrer">
               <Linkedin size={18} />
             </a>
+            <button
+              className="icon-link"
+              type="button"
+              aria-label={`Switch to ${theme === "dark" ? "light" : "dark"} mode`}
+              onClick={() => setTheme((value) => (value === "dark" ? "light" : "dark"))}
+            >
+              {theme === "dark" ? <Sun size={18} /> : <Moon size={18} />}
+            </button>
             <a className="btn btn-primary" href={`mailto:${profile.email}`}>
               <Mail size={17} />
               Contact
@@ -80,6 +97,14 @@ export default function Layout({ children }: LayoutProps) {
                   {item.label}
                 </NavLink>
               ))}
+              <button
+                className="mobile-nav-link flex items-center gap-2"
+                type="button"
+                onClick={() => setTheme((value) => (value === "dark" ? "light" : "dark"))}
+              >
+                {theme === "dark" ? <Sun size={18} /> : <Moon size={18} />}
+                {theme === "dark" ? "Light mode" : "Dark mode"}
+              </button>
             </div>
           </div>
         )}
