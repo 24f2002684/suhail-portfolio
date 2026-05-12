@@ -151,5 +151,15 @@ export const projects: Project[] = [
     category: "iot",
     status: "completed",
     featured: false,
+    year: "2021",
+    links: {
+      demo: "https://drive.google.com/drive/folders/1IZ2IRma3cCYcwm8B7agYqFg5CLDSYa2P?usp=sharing",
+      post: "https://www.instagram.com/reel/CmB3G5WM4CO/?utm_source=ig_web_copy_link&igsh=NTc4MTIwNjQ2YQ==",
+    },
+    images:[
+      "projects/AutomaticHS/HS1.jpeg",
+      "projects/AutomaticHS/HS2.jpeg",
+      "projects/AutomaticHS/HS3.jpeg"
+    ],
   },
 ];
