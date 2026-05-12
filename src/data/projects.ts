@@ -143,7 +143,7 @@ export const projects: Project[] = [
 
   {
     title: "Automatic Hand Sanitizer",
-    slug: "automatic-hand-sanitizer",
+    slug: "AutomaticHS",
     summary: "Touch-free sanitizer dispenser built with Arduino and an ultrasonic sensor.",
     description:
       "An automatic hand sanitizer system using Arduino UNO, motor pump, and ultrasonic sensor to dispense sanitizer without touch.",
